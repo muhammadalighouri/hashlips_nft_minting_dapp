@@ -1,18 +1,18 @@
 {
-  "CONTRACT_ADDRESS": "0xCA8828a7f1EdaAE83F36990F7e34A399E7A5172C",
-  "SCAN_LINK": "https://polygonscan.com/token/0xCA8828a7f1EdaAE83F36990F7e34A399E7A5172C",
+  "CONTRACT_ADDRESS": "0x827acb09a2dc20e39c9aad7f7190d9bc53534192",
+  "SCAN_LINK": "https://polygonscan.com/token/0x827acb09a2dc20e39c9aad7f7190d9bc53534192",
   "NETWORK": {
-    "NAME": "Ethereum Rinkeby",
+    "NAME": "Ethereum",
     "SYMBOL": "ETH",
-    "ID": 4
+    "ID": "1"
   },
-  "NFT_NAME": "cryptoclone",
-  "SYMBOL": "CYH",
-  "MAX_SUPPLY": 5000,
-  "WEI_COST": 1000000000000000,
-  "DISPLAY_COST": 0.001,
+  "NFT_NAME": "Nerdy Coder Clones",
+  "SYMBOL": "NCC",
+  "MAX_SUPPLY": 1000,
+  "WEI_COST": 75000000000000000,
+  "DISPLAY_COST": 0.075,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/the-stripes-nft",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/nerdy-coder-clones",
   "SHOW_BACKGROUND": true
 }

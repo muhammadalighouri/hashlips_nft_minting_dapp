@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Coiny&family=Josefin+Sans:wght@300;400;500;600;700&family=Kanit:wght@400;500;600&family=Koulen&family=Libre+Bodoni:wght@400;500;600;700&family=Luckiest+Guy&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,800;1,900&family=Oleo+Script:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Spectral:wght@200;300;400;500;600;700;800&family=Tapestry&family=VT323&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Staatliches&family=Yanone+Kaffeesatz:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Manjari:wght@100;400;700&family=PT+Mono&family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap');
+/* font-family: 'Bungee', cursive; */
+/* font-family: 'Lato', sans-serif;
+font-family: 'Manjari', sans-serif;
+font-family: 'Paytone One', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'PT Mono', monospace;
+font-family: 'Roboto', sans-serif;
+font-family: 'Space Mono', monospace; */
+/* font-family: 'Kanit', sans-serif;
+font-family: 'Libre Bodoni', serif;
+font-family: 'Martel Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oleo Script', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Space Grotesk', sans-serif;
+font-family: 'Spectral', serif;
+font-family: 'Tapestry', cursive;
+font-family: 'VT323', monospace; */
+/* ////// */
+
+
+@font-face {
+  font-family: Pixeled;
+  src: url(./Pixeled.ttf);
+}
+
+
+:root {
+  --tw-gradient-from: #144d80;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(20,77,128,0));
+  --tw-gradient-to: #272c7d;
+}
+/* font-family: 'Bebas Neue', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Staatliches', cursive;
+font-family: 'Yanone Kaffeesatz', sans-serif; */
+.spin > div > div {
+  color: rgba(255, 39, 69, 1);
+  margin-right: 3px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manjari', sans-serif ;
+  text-decoration: none;
+  color: #fff ;
+}
+/* body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #6e70f3;
+  border-radius: 100px;
+} 
+.marquee-container {
+  overflow-x: unset !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+}
+h1,
+h2 {
+
+  font-weight: 900;
+}
+::before,
+::after {
+  box-sizing: border-box;
+}
+.mark {
+  overflow: unset !important;
+}
+body {
+  /* height: 100vh; */
+  overflow-x: hidden;
+/* background: #07051c !important; */
+background-image: linear-gradient(to bottom,var(--tw-gradient-stops));
+}
+.mar{
+  background: #387fe2;
+  border-top: 1px solid #2E215A;
+  border-bottom: 1px solid #2E215A;
+
+}
+html {
+  scroll-behavior: smooth;
+}
+.owl-theme .owl-nav {
+  margin-top: 10px;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+button.owl-prev {
+  justify-content: center;
+}
+button.owl-next {
+  justify-content: center;
+}
+button.owl-prev span,
+button.owl-next span {
+  transform: scale(1.5);
+  display: inline-block;
+}
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 11px 22px !important;
+  font: inherit;
+  background: none !important;
+  border-radius: 100px !important;
+  top: -40px;
+  position: absolute;
+  border: 1px solid #747373;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.owl-theme .owl-dots .owl-dot span {
+  width: 24px;
+  height: 7px;
+  margin: 5px 3px;
+  background: none;
+  border: 1px solid black;
+}
+.bottomm{
+  background: linear-gradient(360deg, #ff3395, #ff51b8);
+}
+
+.owl-theme .owl-dots .owl-dot {
+  width: 30px;
+}
+.owl-theme .owl-dots {
+  padding: 20px 0;
+}
+button.owl-next {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  transform: translateY(-50%);
+}
+button.owl-prev {
+  position: absolute;
+  top: 40%;
+  right: 51px;
+  transform: translateY(-50%);
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: black !important;
+}
+.owl-stage {
+  /* transition: all 2s ease 0s !important; */
+}
+.makeStyles-heading-2 {
+  font-size: 18px !important;
+  font-weight: 400;
+}
+.MuiTypography-body1 {
+  font-size: 18px !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}

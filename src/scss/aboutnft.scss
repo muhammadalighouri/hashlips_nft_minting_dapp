@@ -1,0 +1,157 @@
+@import "./variable.scss";
+@import "./media.scss";
+
+.about {
+  padding: 90px 0;
+  position: relative;
+  z-index: 4;
+  overflow: hidden;
+
+  position: relative;
+  @include md {
+padding: 30px 0;
+  }
+
+  .container {
+    margin: auto;
+    max-width: 1300px;
+
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      grid-column-gap: 0rem;
+      @include lg {
+      }
+
+      @include lg {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .img {
+        width: 100%;
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+
+        figure {
+          position: relative;
+          border-radius: 20px;
+          margin: 0 auto;
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-gap: 10px 10px;
+          @include lg {
+            max-width: 500px;
+          }
+
+          img {
+            width: 100%;
+            box-shadow: 0 1px 1px #00000014, 0 2px 2px #00000014,
+              0 4px 4px #00000014, 0 8px 8px #00000014, 0 0 10px #00000014;
+            border-radius: 12px;
+          }
+        }
+      }
+    }
+
+    .details {
+      padding: 20px 30px;
+
+      @include md {
+        padding: 20px 10px;
+      }
+
+      @include lg {
+        // padding: 20px 10px;
+        order: 1;
+      }
+
+      > div {
+        h4 {
+          position: relative;
+          text-align: start;
+          margin-bottom: 15px;
+          font-size: 4.3rem;
+          line-height: 1;
+          display: block;
+          font-weight: bolder;
+          background: linear-gradient(
+            to right,
+            #69b2f6 0%,
+            #818ced 20%,
+            #cc6bba 40%,
+            #e46461 60%,
+            #ec764f 80%
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-family: "Montserrat", sans-serif;
+        }
+      }
+
+      > p {
+        margin-bottom: 30px;
+        font-size: 18px;
+        line-height: 1.4;
+        font-weight: 400;
+        width: 100%;
+        margin-top: 20px;
+        font-family: "Lato" !important;
+      }
+
+      button {
+        font-family: "Staatliches", cursive;
+        background: #4f94cf;
+        border: 3px solid #a5d6ff;
+        box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 30px;
+        color: #ffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        font-weight: 600;
+        letter-spacing: 1px;
+
+        &:hover {
+          cursor: pointer;
+          transform: rotate(-2deg) scale(1.1);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@keyframes Utility_cardL__gYhso {
+  0%,
+  100% {
+    transform: translateY(0) translateX(-33%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateY(-8px) translateX(-33%);
+  }
+
+  20%,
+  40%,
+  60% {
+    transform: translateY(8px) translateX(-33%);
+  }
+
+  80% {
+    transform: translateY(6.4px) translateX(-33%);
+  }
+
+  90% {
+    transform: translateY(-6.4px) translateX(-33%);
+  }
+}

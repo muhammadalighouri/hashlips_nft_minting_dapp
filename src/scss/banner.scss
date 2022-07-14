@@ -1,0 +1,161 @@
+@import url("http://fonts.cdnfonts.com/css/toruksc");
+
+
+@import "./variable.scss";
+@import "./media.scss";
+
+.banner {
+  position: relative;
+  height: 100vh;
+  z-index: 3;
+  overflow: hidden;
+
+  .images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    transform: perspective(1000px) rotate3d(1, 1, 1, 10deg) translateY(-34%);
+    .img__grid {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 200px;
+        object-fit: cover;
+
+        height: 100%;
+      }
+    }
+  }
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 10px;
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+      align-items: center;
+      @include md {
+        grid-template-columns: 1fr;
+      }
+      .start {
+        h1 {
+          margin-bottom: 0;
+          img {
+            max-width: 500px;
+            margin-left: -14px;
+            filter: drop-shadow(2px 4px 6px #0000004d);
+            margin-right: 15px;
+            width: 100%;
+          }
+        }
+        p {
+          font-size: 1.2rem;
+          font-weight: 300;
+          line-height: 1.5;
+          color: #fff;
+          margin-top: 0px;
+        }
+        .btns {
+          display: flex;
+          justify-content: start;
+          gap: 10px;
+@include mobile{
+  flex-direction: column;
+}
+          a {
+            > button.first {
+              background: #ff50b6;
+              color: #fff;
+              border: 1px solid #ff50b6;
+              border-radius: 47px;
+              padding: 8px 35px;
+              font-size: 30px;
+              font-weight: 300;
+              line-height: 1.5;
+              cursor: pointer;
+              margin-top: 20px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              svg{
+                fill: #fff;
+                transform: scale(1.2) translateY(-2px);
+              }
+            }
+            > button.second {
+              background: none;
+              color: #ff50b6;
+              border: 5px solid #ff50b6;
+              padding: 8px 35px;
+              font-size: 30px;
+              font-weight: 900;
+              line-height: 1.5;
+              margin-top: 20px;
+              border-radius: 60px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .end {
+        height: 100%;
+        display: flex;
+        align-items: end;
+        width: 100%;
+        @include md {
+          display: none;
+        }
+        .img {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          img {
+            max-width: 600px;
+            margin-left: -14px;
+            filter: drop-shadow(2px 4px 6px #0000004d);
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes parallax_fg {
+  0% {
+    background-position: 3840px 100%;
+  }
+
+  100% {
+    background-position: 550px 100%;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-300vh);
+    opacity: 0;
+  }
+}
+
+// animation: float 5s ease-in infinite
+.marquee-container {
+  overflow-x: unset !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+}
