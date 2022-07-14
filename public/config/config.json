@@ -1,18 +1,18 @@
 {
-  "CONTRACT_ADDRESS": "0xa37b82366D373CcD22673ee2BD97a1379F2437F2",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0xa37b82366D373CcD22673ee2BD97a1379F2437F2",
+  "CONTRACT_ADDRESS": "0xCA8828a7f1EdaAE83F36990F7e34A399E7A5172C",
+  "SCAN_LINK": "https://polygonscan.com/token/0xCA8828a7f1EdaAE83F36990F7e34A399E7A5172C",
   "NETWORK": {
     "NAME": "Ethereum Rinkeby",
-    "SYMBOL": "Matic",
+    "SYMBOL": "ETH",
     "ID": 4
   },
-  "NFT_NAME": "Gulab85",
-  "SYMBOL": "NCC",
-  "MAX_SUPPLY": 20,
-  "WEI_COST": 0,
-  "DISPLAY_COST": 0,
+  "NFT_NAME": "cryptoclone",
+  "SYMBOL": "CYH",
+  "MAX_SUPPLY": 5000,
+  "WEI_COST": 1000000000000000,
+  "DISPLAY_COST": 0.001,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/gulab85",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/the-stripes-nft",
   "SHOW_BACKGROUND": true
 }
