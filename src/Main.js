@@ -108,7 +108,7 @@ function Main() {
     getData();
   }, [blockchain.account]);
   const [final, setFinal] = useState(
-    new Date("July 17, 2022 19:05:00").getTime()
+    new Date("July 19, 2022 00:00:00").getTime()
   );
   const [check, setcheck] = useState(null);
   const [play, setplay] = useState(true);
