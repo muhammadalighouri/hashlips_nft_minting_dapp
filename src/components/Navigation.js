@@ -41,7 +41,7 @@ const Navigation = ({}) => {
   const links = [
     {
       name: "etherscan",
-      link: "https://etherscan.io/address/0x0d8775f648430679a709e98d2b0cb6250d2887ef",
+      link: "cetherscan.io/address/0x0d8775f648430679a709e98d2b0cb6250d2887ef",
     },
     {
       name: "discord",
@@ -49,7 +49,7 @@ const Navigation = ({}) => {
     },
     {
       name: "twitter",
-      link: "",
+      link: "https://twitter.com/cryptotorosfus",
     },
     {
       name: "opensea",
