@@ -51,7 +51,7 @@ font-family: 'Yanone Kaffeesatz', sans-serif; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Manjari', sans-serif ;
+  font-family:"Space Mono",monospace ;
   text-decoration: none;
   color: #fff ;
 }

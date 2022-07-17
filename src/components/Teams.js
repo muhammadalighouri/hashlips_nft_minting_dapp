@@ -57,7 +57,7 @@ const Teams = () => {
               return (
                 <a
                   target={"_blank"}
-                  href={ite.link}
+                  href={'https://twitter.com/cryptotorosfus'}
                   data-aos="fade-up"
                   data-aos-delay={150 * ind}
                   data-aos-easing="ease-out"

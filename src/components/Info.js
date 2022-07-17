@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "../scss/info.scss";
 
-const AboutNft = () => {
+const Info = () => {
   useEffect(() => {
     AOS.init({
       duration: 1200,
@@ -16,25 +16,40 @@ const AboutNft = () => {
       <section id="info" className="info">
         <div className="container">
           <div className="info__grid">
-            <div className="img" data-aos="zoom-out-right"
-              data-aos-delay="300"
-              data-aos-easing="ease-out">
-              <figure>
-            
-              </figure>
+            <div className="start">
+              <h2>
+                <span
+                  style={{
+                    fontSize: "4rem",
+                    marginBottom: "15px",
+                    fontWeight: "900",
+                    color: "#ffcf00",
+                  }}
+                >
+                  MINT
+                </span>{" "}
+                <span
+                  style={{
+                    fontSize: "4rem",
+                    marginBottom: "15px",
+                    fontWeight: "900",
+                  }}
+                >
+                  INFORMATION!
+                </span>
+              </h2>
+              <ul>
+                <li>1000 - free</li>
+                <li>1000 - 0.001 eth</li>
+                <li>1000 - 0.002 eth</li>
+                <li>1000 - 0.003 eth</li>
+                <li>1000 - 0.004 eth</li>
+              </ul>
             </div>
-            <div
-              className="details"
-              
-            >
-              <div>
-              
-              
+            <div className="end">
+              <div className="img">
+                <img src="/images/sec.png" alt="" />
               </div>
-              <p data-aos='zoom-out-up' data-aos-delay='300'>
-              Crypto Toros is a collection of 10,000 uniquely beautiful cat NFTs that thrive on the ethereum blockchain. With aspirations of metaverse integration and implementation of practical holder utilities, our team at Crypto Toros is focused on advancing not only the community, but also testing the limits of technology and artistic freedoms within Web3.
-              </p>
-           
             </div>
           </div>
         </div>
@@ -43,4 +58,4 @@ const AboutNft = () => {
   );
 };
 
-export default AboutNft;
+export default Info;

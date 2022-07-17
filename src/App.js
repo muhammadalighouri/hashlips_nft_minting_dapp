@@ -5,7 +5,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Roadmap from "./components/Roadmap";
 import Teams from "./components/Teams";
-
+import Info from "./components/Info";
 import "./scss/reset.css";
 import AboutNft from "./components/AboutNft";
 
@@ -25,13 +25,13 @@ function App() {
   return (
     <>
       <div
-        // style={{
-        //   backgroundImage: 'url("/images/main-image.png")',
-        //   backgroundSize: "contain",
-        //   width: "100%",
-        //   height: "100%",
-        //   backgroundRepeat: "no-repeat",
-        // }}
+      // style={{
+      //   backgroundImage: 'url("/images/main-image.png")',
+      //   backgroundSize: "contain",
+      //   width: "100%",
+      //   height: "100%",
+      //   backgroundRepeat: "no-repeat",
+      // }}
       >
         <Navigation />
         <Main />
@@ -58,6 +58,7 @@ function App() {
           </div>
 
           <AboutNft />
+          <Info />
           <Roadmap />
 
           <Teams />
