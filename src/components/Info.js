@@ -23,7 +23,7 @@ const Info = () => {
                     fontSize: "4rem",
                     marginBottom: "15px",
                     fontWeight: "900",
-                    color: "#ffcf00",
+                
                   }}
                 >
                   MINT
@@ -35,15 +35,15 @@ const Info = () => {
                     fontWeight: "900",
                   }}
                 >
-                  INFORMATION!
+                  JOURNEY!
                 </span>
               </h2>
               <ul>
-                <li>1000 - free</li>
+                <li>500 - free</li>
                 <li>1000 - 0.001 eth</li>
                 <li>1000 - 0.002 eth</li>
                 <li>1000 - 0.003 eth</li>
-                <li>1000 - 0.004 eth</li>
+                <li>1500 - 0.004 eth</li>
               </ul>
             </div>
             <div className="end">

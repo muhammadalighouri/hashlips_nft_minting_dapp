@@ -33,7 +33,7 @@ function App() {
       //   backgroundRepeat: "no-repeat",
       // }}
       >
-        <Navigation />
+
         <Main />
         <main>
           <div

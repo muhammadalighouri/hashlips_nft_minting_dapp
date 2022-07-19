@@ -89,9 +89,8 @@ h2 {
   overflow: unset !important;
 }
 body {
-  /* height: 100vh; */
   overflow-x: hidden;
-/* background: #07051c !important; */
+
 background-image: linear-gradient(to bottom,var(--tw-gradient-stops));
 }
 .mar{

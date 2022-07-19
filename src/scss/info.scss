@@ -2,12 +2,12 @@
 @import "./media.scss";
 
 .info {
-    padding: 120px 0px;
-    height: 70vh;
-    position: relative;
-    margin-top: 50px;
-    border-top: 3px solid #a5d6ff;
-    border-bottom: 3px solid #a5d6ff;
+  padding: 120px 0px;
+  height: 70vh;
+  position: relative;
+  margin-top: 50px;
+  border-top: 3px solid #a5d6ff;
+  border-bottom: 3px solid #a5d6ff;
   &::before {
     content: "";
     height: 100%;
@@ -35,7 +35,9 @@
       }
       .start {
         h2 {
-          display: none;
+          span {
+            font-family: VT323, monospace;
+          }
         }
         ul {
           position: relative;

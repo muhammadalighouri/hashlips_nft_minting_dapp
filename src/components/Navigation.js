@@ -6,8 +6,8 @@ import { FaDiscord } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaRedditAlien } from "react-icons/fa";
-import {BiChevronUp} from "react-icons/bi/";
-const Navigation = ({}) => {
+import { BiChevronUp } from "react-icons/bi/";
+const Navigation = ({ dispatch, getData, connect }) => {
   const [navToggler, setNavToggler] = useState(false);
   const [navColor, setNavColor] = useState(false);
   const [scroll, setScroll] = useState(false);
@@ -41,19 +41,16 @@ const Navigation = ({}) => {
   const links = [
     {
       name: "etherscan",
-      link: "https://twitter.com/cryptotorosfus",
+      link: "https://etherscan.io/address/0xF9616e049CF8a71cfC4a1AfBa92Fd94c770a71c8",
     },
-    {
-      name: "discord",
-      link: "https://twitter.com/cryptotorosfus",
-    },
+   
     {
       name: "twitter",
       link: "https://twitter.com/cryptotorosfus",
     },
     {
       name: "opensea",
-      link: "https://twitter.com/cryptotorosfus",
+      link: "https://opensea.io/collection/crypto-toros",
     },
   ];
 
@@ -111,7 +108,16 @@ const Navigation = ({}) => {
                   );
                 })}
 
-           
+                {/* <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(connect());
+                    getData();
+                  }}
+                >
+                  {" "}
+                  connet
+                </button> */}
               </div>
             </div>
           </div>
@@ -122,8 +128,7 @@ const Navigation = ({}) => {
         className="auto_scroll"
         style={scroll ? { transform: "scale(1)" } : {}}
       >
-   
-   <BiChevronUp />
+        <BiChevronUp />
       </div>
     </>
   );

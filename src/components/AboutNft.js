@@ -57,7 +57,7 @@ const AboutNft = () => {
                 data-aos="zoom-out-up"
                 data-aos-delay="300"
                 style={{ display: "inline-block" }}
-                href=" https://twitter.com/Crypto Toros"
+                href="https://twitter.com/cryptotorosfus"
                 target={"_blank"}
               >
                 <button>Join Community!</button>

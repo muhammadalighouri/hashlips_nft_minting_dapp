@@ -6,6 +6,8 @@ import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import "./scss/app.scss";
 import Marquee from "react-easy-marquee";
+import Navigation from "./components/Navigation";
+var Spinner = require("react-spinkit");
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
 
@@ -60,7 +62,7 @@ function Main() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+          `WOW 😍, the ${CONFIG.NFT_NAME} is yours! `
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -77,8 +79,8 @@ function Main() {
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 10) {
-      newMintAmount = 10;
+    if (newMintAmount > 5) {
+      newMintAmount = 5;
     }
     setMintAmount(newMintAmount);
   };
@@ -116,6 +118,8 @@ function Main() {
   const [min, setMin] = useState(null);
   const [hour, setHour] = useState(null);
   const [day, setDay] = useState(null);
+  const [reveal, setreveal] = useState(false);
+  console.log(check);
   if (play) {
     setInterval(
       () => {
@@ -129,13 +133,8 @@ function Main() {
         );
         setMin(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
         setSec(Math.floor((distance % (1000 * 60)) / 1000));
-        // if (distance <= 0) {
-        //   revelit(true);
-        // }
-        setcheck(distance);
-
-        if (check < 0) {
-          setplay(false);
+        if (distance <= 0) {
+          setreveal(true);
         }
       },
 
@@ -161,10 +160,12 @@ function Main() {
     },
   ];
   // write a loop to run 10 times
-
+  // getData();
   return (
     <>
       <div className="main__wrapper">
+        <Navigation dispatch={dispatch} getData={getData} connect={connect} />
+
         <div className="main__container">
           <div className="grid">
             <div className="middle">
@@ -172,172 +173,286 @@ function Main() {
                 <div className="logo">
                   <img src="/images/gif.gif" alt="" />
                 </div>
-                <div className="bottom">
-                  <h2
-                    style={{
-                      marginTop: "20px",
-                      fontSize: "3rem",
-                      fontWeight: "900",
-                      fontFamily: "'Staatliches'",
-                    }}
-                  >
-                    MINT WILL START IN!
-                  </h2>
-                  <div
-                    className="date"
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns: '1fr 1fr 1fr 1fr',
-                      placeItems: 'center',
-                      gap: '5px',
-                      marginTop: '10px',
-                      background: '#387fe2',
-                      padding: '10px',
-                      borderRadius: '12px',
-                      boxShadow: '0 1px 1px #00000014, 0 2px 2px #00000014, 0 4px 4px #00000014, 0 8px 8px #00000014, 0 0 10px #00000014',
-                      border: '3px solid #a5d6ff'
-                    }}
-                  >
-                    {date.map((item, i) => {
-                      return (
-                        <div key={i} className="date__item">
-                          <div
-                            style={{
-                              fontSize: "clamp(2rem, 5vw, 2.5rem)",
-                              textTransform: "uppercase",
-                              fontFamily: "'Staatliches'",
-                            }}
-                            className="date__item__text"
-                          >
-                            {item.name}
+                {!reveal ? (
+                  <div className="bottom">
+                    <h2
+                      style={{
+                        marginTop: "20px",
+                        fontSize: "3rem",
+                        fontWeight: "900",
+                        fontFamily: "'Staatliches'",
+                      }}
+                    >
+                      MINT WILL START IN!
+                    </h2>
+                    <div
+                      className="date"
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr 1fr 1fr",
+                        placeItems: "center",
+                        gap: "5px",
+                        marginTop: "10px",
+                        background: "#387fe2",
+                        padding: "10px",
+                        borderRadius: "12px",
+                        boxShadow:
+                          "0 1px 1px #00000014, 0 2px 2px #00000014, 0 4px 4px #00000014, 0 8px 8px #00000014, 0 0 10px #00000014",
+                        border: "3px solid #a5d6ff",
+                      }}
+                    >
+                      {date.map((item, i) => {
+                        return (
+                          <div key={i} className="date__item">
+                            <div
+                              style={{
+                                fontSize: "clamp(2rem, 5vw, 2.5rem)",
+                                textTransform: "uppercase",
+                                fontFamily: "'Staatliches'",
+                              }}
+                              className="date__item__text"
+                            >
+                              {item.name}
+                            </div>
+                            <div
+                              className="date__item__number"
+                              style={{
+                                fontSize: "clamp(2rem, 5vw, 2.5rem)",
+                                marginTop: "10px",
+                                fontFamily: "'Staatliches'",
+                              }}
+                            >
+                              {item.value}
+                            </div>
                           </div>
-                          <div
-                            className="date__item__number"
-                            style={{
-                              fontSize: "clamp(2rem, 5vw, 2.5rem)",
-                              marginTop: "10px",
-                              fontFamily: "'Staatliches'",
-                            }}
-                          >
-                            {item.value}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div style={{ display: "none" }}>
-                  <h2>MINT IS LIVE!</h2>
-                  <div className="supply">
-                    {data.totalSupply} / {CONFIG.MAX_SUPPLY}
-                  </div>
-                  <p className="address">
-                    <a target={"_blank"} href={CONFIG.SCAN_LINK}>
-                      {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-                    </a>
-                  </p>
-
-                  {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
-                    <div className="end">
-                      <p>The sale has ended.</p>
-                      <p>You can still find {CONFIG.NFT_NAME} on</p>
-
-                      <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
-                        {CONFIG.MARKETPLACE}
-                      </a>
+                        );
+                      })}
                     </div>
-                  ) : (
-                    <>
-                      <h2>
-                        1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                        {CONFIG.NETWORK.SYMBOL}.
-                      </h2>
+                  </div>
+                ) : (
+                  <div>
+                    <h2
+                      style={{
+                        fontFamily: "VT323, monospace",
+                        fontSize: "3.5rem",
+                        marginTop: "6px",
+                        lineHeight: "1",
+                        fontWeight: "500",
+                        marginBottom: "-8px",
+                      }}
+                    >
+                      MINT IS LIVE!
+                    </h2>
+                    <div
+                      className="supply"
+                      style={{
+                        textAlign: "center",
+                        fontSize: "3.5rem",
+                        marginBottom: "0px",
+                        fontFamily: "VT323, monospace",
+                        lineHeight: "1",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+                    </div>
 
-                      <p>Excluding gas fees.</p>
+                    {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+                      <div className="end">
+                        <p>The sale has ended.</p>
+                        <p>You can still find {CONFIG.NFT_NAME} on</p>
 
-                      {blockchain.account === "" ||
-                      blockchain.smartContract === null ? (
-                        <div
+                        <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+                          {CONFIG.MARKETPLACE}
+                        </a>
+                      </div>
+                    ) : (
+                      <>
+                        <h2
                           style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            flexDirection: "column",
+                            fontFamily: "VT323, monospace",
+                            fontWeight: "500",
+                            fontSize: "2rem",
+                            lineHeight: "1",
+                            marginBottom: "8px",
                           }}
                         >
-                          <p>Connect to the {CONFIG.NETWORK.NAME} network</p>
+                          1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+                          {CONFIG.NETWORK.SYMBOL} + GAS.
+                        </h2>
 
-                          <button
-                            onClick={(e) => {
-                              e.preventDefault();
-                              dispatch(connect());
-                              getData();
-                            }}
+                        {blockchain.account === "" ||
+                        blockchain.smartContract === null ? (
+                          <div
                             style={{
-                              width: "70%",
-                              margin: "0 auto 10px",
-                              background: "#dc5e52",
-                              outline: "none",
-                              border: "0",
-                              padding: "10px",
-                              borderRadius: "6px",
-                              boxShadow: "0 0 4px rgb(0 0 0 / 30%)",
-                              color: "#fff",
-                              fontWeight: "bold",
-                              cursor: "pointer",
+                              display: "flex",
+                              justifyContent: "center",
+                              flexDirection: "column",
                             }}
                           >
-                            CONNECT
-                          </button>
-                          {blockchain.errorMsg !== "" ? (
-                            <>
-                              <p>{blockchain.errorMsg}</p>
-                            </>
-                          ) : null}
-                        </div>
-                      ) : (
-                        <>
-                          <p>{feedback}</p>
-
-                          <div>
                             <button
-                              disabled={claimingNft ? 1 : 0}
                               onClick={(e) => {
                                 e.preventDefault();
-                                decrementMintAmount();
-                              }}
-                            >
-                              -
-                            </button>
-
-                            <p>{mintAmount}</p>
-
-                            <button
-                              disabled={claimingNft ? 1 : 0}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                incrementMintAmount();
-                              }}
-                            >
-                              +
-                            </button>
-                          </div>
-                          <div>
-                            <button
-                              disabled={claimingNft ? 1 : 0}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                claimNFTs();
+                                dispatch(connect());
                                 getData();
                               }}
+                              style={{
+                                fontFamily: "VT323, monospace",
+                                width: "95%",
+                                margin: "0px auto 10px",
+                                background: "rgb(56 127 226)",
+                                outline: "none",
+                                border: "0px",
+                                padding: "10px",
+                                borderRadius: "5px",
+                                boxShadow: "rgba(0, 0, 0, 0.3) 0px 0px 4px",
+                                color: "rgb(255, 255, 255)",
+                                fontWeight: "bold",
+                                cursor: "pointer",
+                                lineHeight: "1",
+                                fontSize: "2rem",
+                              }}
                             >
-                              {claimingNft ? "BUSY" : "BUY"}
+                              CONNECT WALLET
                             </button>
+                            <p
+                              style={{
+                                textAlign: "center",
+                                marginBottom: "10px",
+                                fontFamily: "VT323, monospace",
+                                fontSize: "2rem",
+
+                                lineHeight: "1",
+                              }}
+                            >
+                              Connect to the {CONFIG.NETWORK.NAME} network
+                            </p>
+                            {blockchain.errorMsg !== "" ? (
+                              <>
+                                <p>{blockchain.errorMsg}</p>
+                              </>
+                            ) : null}
                           </div>
-                        </>
-                      )}
-                    </>
-                  )}
-                </div>
+                        ) : (
+                          <>
+                            <p
+                              style={{
+                                fontFamily: 'VT323, monospace',
+                                fontWeight: '500',
+                                fontSize: '2rem',
+                                lineHeight: '1',
+                                marginBottom: '8px',
+                                marginTop: '-10px'
+                              }}
+                            >
+                              {" "}
+                              {feedback}
+                            </p>
+                            <div
+                              style={{
+                                display: "grid",
+                                gridTemplateColumns: "1fr 3fr 1fr",
+                              }}
+                            >
+                              <button
+                                disabled={claimingNft ? 1 : 0}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  decrementMintAmount();
+                                }}
+                                style={{
+                                  height: "52px",
+                                  background: "rgb(56 127 226)",
+                                  border: "0",
+                                  marginBottom: "5px",
+                                  borderRadius: "6px",
+                                  fontSize: "3rem",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  width: "52px",
+                                  cursor: "pointer",
+                                }}
+                              >
+                                -
+                              </button>
+
+                              <p>{mintAmount}</p>
+
+                              <button
+                                disabled={claimingNft ? 1 : 0}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  incrementMintAmount();
+                                }}
+                                style={{
+                                  height: "52px",
+                                  background: "rgb(56 127 226)",
+                                  border: "0px",
+                                  marginBottom: "5px",
+                                  borderRadius: "6px",
+                                  fontSize: "3rem",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  fontFamily: "Raleway",
+                                  width: "52px",
+                                  cursor: "pointer",
+                                  justifySelf: "end",
+                                }}
+                              >
+                                +
+                              </button>
+                            </div>
+                            <div>
+                              <button
+                                disabled={claimingNft ? 1 : 0}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  claimNFTs();
+                                  getData();
+                                }}
+                                style={{
+                                  fontFamily: "VT323, monospace",
+                                  width: "100%",
+                                  margin: "0px auto 10px",
+                                  background: "rgb(56, 127, 226)",
+                                  outline: "none",
+                                  border: "0px",
+                                  padding: "10px",
+                                  borderRadius: "5px",
+                                  boxShadow: "rgba(0, 0, 0, 0.3) 0px 0px 4px",
+                                  color: "rgb(255, 255, 255)",
+                                  fontWeight: "bold",
+                                  cursor: "pointer",
+                                  lineHeight: "1",
+                                  fontSize: "2rem",
+                                  height: "52px",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                }}
+                              >
+                                {claimingNft ? (
+                                  <Spinner
+                                    name="three-bounce"
+                                    style={{
+                                      transform: "scale(1)",
+                                      display: "flex",
+                                    }}
+                                    color="red"
+                                  />
+                                ) : (
+                                  "MINT NOW!"
+                                )}
+                              </button>
+                            </div>
+                          </>
+                        )}
+                      </>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
