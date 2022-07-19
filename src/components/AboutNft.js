@@ -39,7 +39,7 @@ const AboutNft = () => {
               />
 
               <p data-aos="zoom-out-up" data-aos-delay="300">
-                Crypto Toros is a collection of 10,000 uniquely beautiful cat
+                Crypto Toros is a collection of 5000 uniquely beautiful Bulls
                 NFTs that thrive on the ethereum blockchain. With aspirations of
                 metaverse integration and implementation of practical holder
                 utilities, our team at Crypto Toros is focused on advancing not
